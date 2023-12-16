@@ -3,32 +3,32 @@ import "./styles.css";
 const skillData = [
   {
     name: "HTML & CSS",
-    icon: "💪🏿",
+    level: "beginner",
     backgroundColor: "red",
   },
   {
     name: "JavaScript",
-    icon: "💪🏿",
+    level: "advanced",
     backgroundColor: "blue",
   },
   {
     name: "React",
-    icon: "🚀",
+    level: "intermediate",
     backgroundColor: "green",
   },
   {
     name: "Node.js",
-    icon: "💪🏿",
+    level: "beginner",
     backgroundColor: "yellow",
   },
   {
     name: "MongoDB",
-    icon: "💪🏿",
+    level: "beginner",
     backgroundColor: "pink",
   },
   {
     name: "Mysql",
-    icon: "💪🏿",
+    level: "beginner",
     backgroundColor: "orange",
   },
 ];
@@ -87,7 +87,12 @@ const Skill = ({ skill }) => {
       className="skill"
       style={{ backgroundColor: `${skill.backgroundColor}` }}
     >
-      {skill.name} {skill.icon}
+      {skill.name}{" "}
+      {skill.level === "beginner"
+        ? "🔰"
+        : skill.level === "intermediate"
+        ? "🚀"
+        : "🤩"}
     </li>
   );
 };
